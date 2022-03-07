@@ -6,7 +6,7 @@ PHP_APPS=dashboard/api \
 	trackers/binance \
 	analyzer/binance
 
-start:
+api-start:
 	$(DOCKER_COMPOSE) up -d --remove-orphan
 
 stop:
@@ -26,5 +26,8 @@ tty:
 
 log:
 	$(DOCKER_COMPOSE) logs -f
+
+npm-start:
+	cd apps/dashboard/app && npm start
 
 ## Run commands ##
