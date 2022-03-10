@@ -1,6 +1,8 @@
 <?php
 
 use Ajegu\TradingBook\Dashboard\Api\Exception\Handler;
+use Ajegu\TradingBook\Dashboard\Api\Http\Middleware\AuthenticateMiddleware;
+use Ajegu\TradingBook\Dashboard\Api\Provider\AuthServiceProvider;
 use Ajegu\TradingBook\Dashboard\Api\Provider\AwsServiceProvider;
 use Ajegu\TradingBook\Dashboard\Api\Provider\DdbAccessServiceProvider;
 
@@ -75,9 +77,9 @@ $app->configure('app');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+$app->routeMiddleware([
+    'auth' => AuthenticateMiddleware::class,
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +92,7 @@ $app->configure('app');
 |
 */
 
+$app->register(AuthServiceProvider::class);
 $app->register(AwsServiceProvider::class);
 $app->register(DdbAccessServiceProvider::class);
 

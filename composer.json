@@ -5,12 +5,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ajegu\\TradingBook\\Dashboard\\Api\\": "app/dashboard/api/app"
+            "Ajegu\\TradingBook\\Dashboard\\Api\\": "apps/dashboard/api/app"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ajegu\\TradingBook\\Dashboard\\Api\\Test\\": "app/dashboard/api/tests"
+            "Ajegu\\TradingBook\\Dashboard\\Api\\Test\\": "apps/dashboard/api/tests"
         }
     },
     "authors": [
@@ -21,6 +21,7 @@
     "require": {
         "php": "^8.1",
         "ajegu/ddb-access": "dev-main",
+        "firebase/php-jwt": "^6.0",
         "laravel/lumen-framework": "^9.0"
     },
     "repositories": [
