@@ -22,7 +22,9 @@
         "php": "^8.1",
         "ajegu/ddb-access": "dev-main",
         "firebase/php-jwt": "^6.0",
-        "laravel/lumen-framework": "^9.0"
+        "laravel/lumen-framework": "^9.0",
+        "symfony/property-access": "^6.0",
+        "symfony/serializer": "^6.0"
     },
     "repositories": [
         {

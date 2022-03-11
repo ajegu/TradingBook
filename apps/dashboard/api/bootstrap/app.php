@@ -5,6 +5,7 @@ use Ajegu\TradingBook\Dashboard\Api\Http\Middleware\AuthenticateMiddleware;
 use Ajegu\TradingBook\Dashboard\Api\Provider\AuthServiceProvider;
 use Ajegu\TradingBook\Dashboard\Api\Provider\AwsServiceProvider;
 use Ajegu\TradingBook\Dashboard\Api\Provider\DdbAccessServiceProvider;
+use Ajegu\TradingBook\Dashboard\Api\Provider\SerializerServiceProvider;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -95,6 +96,7 @@ $app->routeMiddleware([
 $app->register(AuthServiceProvider::class);
 $app->register(AwsServiceProvider::class);
 $app->register(DdbAccessServiceProvider::class);
+$app->register(SerializerServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

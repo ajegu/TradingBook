@@ -24,8 +24,8 @@ $routes = function() use ($router) {
     /**
      * Wallet routes
      */
-    $router->get('/wallet', [
-        'uses' => 'WalletController@list',
+    $router->get('/asset', [
+        'uses' => 'AssetController@list',
         'middleware' => ['auth']
     ]);
 };
