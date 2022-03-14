@@ -31,3 +31,7 @@ npm-start:
 	cd apps/dashboard/app && npm start
 
 ## Run commands ##
+tf-dev-plan:
+	cd infra/run && terraform init --backend-config=dev/s3.tfbackend && terraform plan -var-file=dev/config.tfvars
+tf-dev-apply:
+	cd infra/run && terraform init --backend-config=dev/s3.tfbackend && terraform apply -var-file=dev/config.tfvars -auto-approve

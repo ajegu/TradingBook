@@ -6,6 +6,8 @@ class Asset
 {
     private string $name;
     private string $symbol;
+    private string $externalReference;
+    private AssetImage $image;
 
     /**
      * @return string
@@ -37,6 +39,38 @@ class Asset
     public function setSymbol(string $symbol): void
     {
         $this->symbol = $symbol;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExternalReference(): string
+    {
+        return $this->externalReference;
+    }
+
+    /**
+     * @param string $externalReference
+     */
+    public function setExternalReference(string $externalReference): void
+    {
+        $this->externalReference = $externalReference;
+    }
+
+    /**
+     * @return AssetImage
+     */
+    public function getImage(): AssetImage
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param AssetImage $image
+     */
+    public function setImage(AssetImage $image): void
+    {
+        $this->image = $image;
     }
 
 

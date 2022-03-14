@@ -48,4 +48,19 @@ class AssetRepository
 
         return new AssetList($assets, $result->getCursor());
     }
+
+    /**
+     * @param Asset $asset
+     * @return void
+     * @throws DDBAccessException
+     * @throws ExceptionInterface
+     */
+    public function save(Asset $asset): void
+    {
+        $this->dbAccess->save(
+            self::PARTITION_KEY,
+            $asset->getSymbol(),
+            $this->serializer->normalize($asset)
+        );
+    }
 }

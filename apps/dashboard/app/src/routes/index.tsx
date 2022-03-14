@@ -24,8 +24,8 @@ const dashboardsRoutes = {
 };
 
 const projectsRoutes = {
-  id: "Wallet",
-  path: "/wallet",
+  id: "Trades",
+  path: "/trades",
   icon: <Briefcase />,
   component: Projects,
   children: null
