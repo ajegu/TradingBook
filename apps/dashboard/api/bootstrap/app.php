@@ -2,6 +2,7 @@
 
 use Ajegu\TradingBook\Dashboard\Api\Exception\Handler;
 use Ajegu\TradingBook\Dashboard\Api\Http\Middleware\AuthenticateMiddleware;
+use Ajegu\TradingBook\Dashboard\Api\Http\Middleware\CorsMiddleware;
 use Ajegu\TradingBook\Dashboard\Api\Provider\AuthServiceProvider;
 use Ajegu\TradingBook\Dashboard\Api\Provider\AwsServiceProvider;
 use Ajegu\TradingBook\Dashboard\Api\Provider\DdbAccessServiceProvider;
@@ -74,9 +75,9 @@ $app->configure('app');
 |
 */
 
-// $app->middleware([
-//     App\Http\Middleware\ExampleMiddleware::class
-// ]);
+$app->middleware([
+    'cors' => CorsMiddleware::class
+]);
 
 $app->routeMiddleware([
     'auth' => AuthenticateMiddleware::class,
