@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ajegu/ddb-access.git",
-                "reference": "5c83ac5f3d51d1b7cd8f9debdc391fdde14a7616"
+                "reference": "2e224e2baee3947cff51795064e4daf9d1e2c371"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ajegu/ddb-access/zipball/5c83ac5f3d51d1b7cd8f9debdc391fdde14a7616",
-                "reference": "5c83ac5f3d51d1b7cd8f9debdc391fdde14a7616",
+                "url": "https://api.github.com/repos/ajegu/ddb-access/zipball/2e224e2baee3947cff51795064e4daf9d1e2c371",
+                "reference": "2e224e2baee3947cff51795064e4daf9d1e2c371",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "source": "https://github.com/ajegu/ddb-access/tree/main",
                 "issues": "https://github.com/ajegu/ddb-access/issues"
             },
-            "time": "2022-03-12T21:20:18+00:00"
+            "time": "2022-03-22T07:36:48+00:00"
         },
         {
             "name": "aws/aws-crt-php",

@@ -33,7 +33,8 @@ class AssetController extends Controller
     {
         $rules = [
             'cursor' => 'string',
-            'pageSize' => 'int'
+            'pageSize' => 'int',
+            'symbol' => 'string'
         ];
 
         $requestData = $this->validate($request, $rules);
@@ -41,6 +42,7 @@ class AssetController extends Controller
         $assetList = $this->assetRepository->findAll(
             $requestData['cursor'] ?? null,
             $requestData['pageSize'] ?? 20,
+            $requestData['symbol'] ?? null
         );
 
         return new JsonResponse(

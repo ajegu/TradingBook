@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-export function fetchAssets(cursor: string|null, pageSize: number) {
+export function fetchAssets(cursor: string|null, pageSize: number, symbol: string|null) {
 
   const token = localStorage.getItem('jwtToken')
 
@@ -11,7 +11,8 @@ export function fetchAssets(cursor: string|null, pageSize: number) {
     },
     params: {
       cursor,
-      pageSize
+      pageSize,
+      symbol
     }
   })
 }

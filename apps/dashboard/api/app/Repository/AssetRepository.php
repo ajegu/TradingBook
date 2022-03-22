@@ -26,6 +26,7 @@ class AssetRepository
     /**
      * @param string|null $cursor
      * @param int|null $pageSize
+     * @param string|null $symbol
      * @return AssetList
      * @throws DDBAccessException
      * @throws ExceptionInterface
@@ -33,11 +34,14 @@ class AssetRepository
     public function findAll(
         ?string $cursor,
         ?int $pageSize,
+        ?string $symbol
     ): AssetList {
 
         $query = new Query();
-        $query->setPartitionKeyValue(self::PARTITION_KEY);
+        $query->setPartitionKey(self::PARTITION_KEY);
+        $query->setSortKey($symbol);
         $query->setPageSize($pageSize);
+        $query->setCursor($cursor);
         $query->setCursor($cursor);
 
         $result = $this->dbAccess->findAll($query);
