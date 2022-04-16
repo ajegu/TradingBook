@@ -3,15 +3,15 @@ import React from "react";
 import async from "../components/Async";
 
 import {
-  Briefcase,
   Sliders,
-  Lock
+  Lock,
+  BarChart2
 } from "react-feather";
 
 
 // Dashboards components
 const Default = async(() => import("../pages/Overview"));
-const Projects = async(() => import("../pages/Wallet"));
+const Trades = async(() => import("../pages/Trades"));
 const AssetList = async(() => import("../pages/AssetList"));
 
 const dashboardsRoutes = {
@@ -23,11 +23,11 @@ const dashboardsRoutes = {
   component: Default
 };
 
-const projectsRoutes = {
+const tradesRoutes = {
   id: "Trades",
   path: "/trades",
-  icon: <Briefcase />,
-  component: Projects,
+  icon: <BarChart2 />,
+  component: Trades,
   children: null
 };
 
@@ -48,7 +48,7 @@ const adminRoutes = {
 // Routes using the Dashboard layout
 export const dashboardLayoutRoutes = [
   dashboardsRoutes,
-  projectsRoutes,
+  tradesRoutes,
   adminRoutes
 ];
 
@@ -56,6 +56,6 @@ export const dashboardLayoutRoutes = [
 // Routes visible in the sidebar
 export const sidebarRoutes = [
   dashboardsRoutes,
-  projectsRoutes,
+  tradesRoutes,
   adminRoutes
 ];
